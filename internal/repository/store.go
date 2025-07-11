@@ -42,17 +42,39 @@ func (s Storage) GetAllTournaments() ([]Tournament, error) {
 	return res, nil
 }
 
-func (s Storage) RegistrationUserTournament(userId uint64) error {
+func (s Storage) RegistrationUserTournament(ctx context.Context, userId uint64) error {
 
 	return nil
 }
 
-func (s Storage) GetTournamentByUserID(userId uint64) (Tournament, error) {
+func (s Storage) GetTournamentByUserID(ctx context.Context, userId uint64) (Tournament, error) {
 
 	return Tournament{}, nil
 }
 
-func (s Storage) GetTournamentByID(userId uint64) (Tournament, error) {
+func (s Storage) GetTournamentByID(ctx context.Context, userId uint64) (Tournament, error) {
 
 	return Tournament{}, nil
+}
+
+func (s Storage) GetTournamentByName(ctx context.Context, name string) (Tournament, error) {
+
+	return Tournament{}, nil
+}
+
+func (s Storage) GetMembersByTournamentID(ctx context.Context, tourID uint64) ([]TournamentMembers, error) {
+	members := make([]TournamentMembers, 100)
+
+	return members, nil
+}
+
+func (s Storage) StopTournament(ctx context.Context, tourID uint64) error {
+	// изменение статуса запущенного утрнира
+
+	return nil
+}
+
+func (s Storage) SetBalanceByUserID(ctx context.Context, bonus uint64, userID uint64) error {
+	// начислить бонус
+	return nil
 }
